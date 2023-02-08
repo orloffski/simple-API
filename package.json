@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/orloffski/simple-API/issues"
   },
-  "homepage": "https://github.com/orloffski/simple-API#readme"
+  "homepage": "https://github.com/orloffski/simple-API#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
 }

@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import { userRouter } from './users/users.js';
 
 const port = 8000;
@@ -20,7 +20,7 @@ app.all('*', (req, res) => {
 	throw new Error('page not found!')
 })
 
-app.use((err, req, res, next) => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	console.log(`Error: ${err.message}`);
 	res.status(404).send(err.message);
 });
