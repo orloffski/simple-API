@@ -1,10 +1,10 @@
-import log from 'fancy-log';
+import { Logger, ILogObj } from "tslog";
 
 export class LoggerService {
-	private readonly logger: any;
+	private readonly logger: Logger<ILogObj>;
 
-	constructor(){
-		this.logger = log;
+	constructor() {
+		this.logger = new Logger();
 	}
 
 	log(...args: unknown[]){
