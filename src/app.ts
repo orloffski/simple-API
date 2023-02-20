@@ -15,7 +15,7 @@ export class App {
 
 	constructor(logger: ILogger, userController: UserController, exceptionFilter: ExceptionFilter){
 		this.app = express();
-		this.port = 8001;
+		this.port = 8000;
 		this.logger = logger;
 		this.userController = userController;
 		this.exceptionFilter = exceptionFilter;
