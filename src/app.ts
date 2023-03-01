@@ -17,20 +17,20 @@ export class App {
 		@inject(TYPES.ILogger) private logger: ILogger,
 		@inject(TYPES.IUserController) private userController: UserController,
 		@inject(TYPES.IExceptionFilter) private exceptionFilter: ExceptionFilter,
-	){
+	) {
 		this.app = express();
 		this.port = 8000;
 	}
 
-	useRoute(){
+	useRoute(): void {
 		this.app.use('/users', this.userController.router);
 	}
 
-	useExceptionFilter(){
+	useExceptionFilter(): void {
 		this.app.use(this.exceptionFilter.catch.bind(this.exceptionFilter));
 	}
 
-	public async init(){
+	public async init(): Promise<void> {
 		this.useRoute();
 		this.useExceptionFilter();
 		this.app.listen(this.port);
